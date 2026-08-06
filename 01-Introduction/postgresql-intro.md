@@ -47,3 +47,13 @@ Stores, manages, secures, and retrieves data efficiently.
 One-line summary
 
 SQL is the language you write, PostgreSQL is the software that executes it. PostgreSQL is an RDBMS, and every RDBMS is a specialized type of DBMS.
+
+
+
+
+
+## notes:
+- postgresql - not db it is db server
+- it install locally in our pc so it store data directly on our pc(but not temp it store permanently in our disk it writes to ssd)
+- but in mongo db we have its own offical cloud service called mongodb atlas to host the service 
+- but in postgresql it open source software to host data on cloud we have to use external cloud service like aws, supabase etc
