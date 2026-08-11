@@ -1,0 +1,10 @@
+A database is basically a structured place where data is stored and managed.
+
+
+# in mongodb:
+- database -> collection -> document
+
+# in PostgreSQL
+- database -> table( describe what types of data we are storing) -> row
+
+

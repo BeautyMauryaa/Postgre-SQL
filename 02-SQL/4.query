@@ -1,0 +1,148 @@
+SQL PHASE 1
+
+CREATE DATABASE
+CREATE TABLE
+INSERT- ADD A NEW ROW
+SELECT - READ ROW
+WHERE - which row do i want to perform task
+UPDATE - modify existing row
+DELETE
+ORDER BY
+LIMIT
+DISTINCT
+NULL
+
+Master@123
+1. CREATE DATABASE
+
+CREATE DATABASE database_name;
+
+
+PostgreSQL Server
+        ↓
+    Database
+        ↓
+      Tables
+
+
+2. CREATE TABLE
+
+CREATE TABLE students (
+    id INTEGER,
+    name VARCHAR(100),
+    email VARCHAR(255),
+    course VARCHAR(100),
+    age INTEGER,
+    is_active BOOLEAN
+);
+
+
+3. INSERT
+
+INSERT INTO students (
+    id, name, email, course, age, is_active
+)
+VALUES (
+    1, 'Nova', 'nova@gmail.com', 'BCA', 21, TRUE
+);
+
+
+Multiple rows:
+
+INSERT INTO students
+(id, name, email, course, age, is_active)
+VALUES
+(2, 'Alex', 'alex@gmail.com', 'BCA', 24, TRUE),
+(3, 'John', 'john@gmail.com', 'BCA', 27, FALSE),
+(4, 'Sarah', 'sarah@gmail.com', 'MCA', 22, TRUE);
+
+
+4. SELECT
+
+SELECT * FROM students;
+
+SELECT name, email
+FROM students;
+
+SELECT name, age + 5 AS next_5_years
+FROM students;
+
+
+SELECT → which columns do I want?
+FROM   → which table?
+WHERE  → which rows do I want?
+
+
+5. WHERE
+
+SELECT *
+FROM students
+WHERE age > 23;
+
+
+Comparison operators:
+
+=    equal
+>    greater than
+<    less than
+>=   greater than or equal
+<=   less than or equal
+<>   not equal
+
+
+WHERE with text:
+
+SELECT *
+FROM students
+WHERE name = 'Beauty';
+
+
+WHERE + specific columns:
+
+SELECT name, age
+FROM students
+WHERE name = 'Nova';
+
+
+6. UPDATE
+UPDATE students
+SET age=22
+WHERE id=2;
+
+
+
+- can update more than one column at once
+UPDATE students
+SET course='dbms'
+    email='nova@gmail.com'
+WHERE id=1
+
+
+UPDATE students
+SET age=25 
+- no where it means update age in each row
+
+
+7. DELETE: remove row from table but table exist
+DELETE students
+WHERE id=2;
+
+- dangrous : DELETE FROM students 
+
+
+8. DROP : DELETE THE ENTIRE TABLE
+- DROP table students
+
+
+9. ORDER BY 
+- RETURNED the row in particular ORDER
+- where: filter row
+- order by: sort the row
+
+10. LIMIT - control how many rows you get 
+SELECT * FROM students
+LIMIT 2;
+
+
+11. DISTINCT - remove duplicate results
+    

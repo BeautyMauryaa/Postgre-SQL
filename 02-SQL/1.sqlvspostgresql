@@ -1,0 +1,17 @@
+- structured query lang
+- the lang which we use to communicate with relational db
+
+
+- psogresql- dbms that understand sql
+- (system / server)
+
+SQL
+ ↓
+Language
+
+PostgreSQL
+ ↓
+Database system that understands that language
+
+
+ex: js-language and node js - environment that execute js

@@ -1,0 +1,3 @@
+- a GUI(graphical user interface) tool used to interact and mannage postgresql
+- instead of writing sql command on terminal to interact with postgresql db its provide the web based interface 
+- similar to mongodb compass

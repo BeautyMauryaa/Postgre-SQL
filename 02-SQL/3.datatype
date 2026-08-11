@@ -1,0 +1,11 @@
+- in mongodb we don't need to define the datatype
+- but in postgresql it is necessary to describe which types data column is going to store
+
+ex:
+CREATE TABLE users (
+    id INTEGER,
+    name VARCHAR(100),
+    age INTEGER,
+    email VARCHAR(255),
+    is_active BOOLEAN
+);
