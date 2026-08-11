@@ -76,3 +76,19 @@ WHERE -> filters rows
 GROUP BY -> creates groups
 
 HAVING -> filters those groups
+
+
+- mental moda
+FROM
+ ↓
+WHERE          → filter rows
+ ↓
+GROUP BY       → create groups
+ ↓
+HAVING         → filter groups
+ ↓
+SELECT         → choose what to return
+ ↓
+ORDER BY       → sort
+ ↓
+LIMIT          → restrict result
