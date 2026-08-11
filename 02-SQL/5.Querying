@@ -1,0 +1,61 @@
+1. AND/OR/NOT 
+- and - Multiple
+- or addition
+- not opposite
+SELECT * FROM students
+WHERE age<25 AND course='aiml';
+
+SELECT * FROM students
+WHERE course <>'MCA';
+
+SELECT * FROM students
+WHERE NOT course='MCA'
+
+
+SELECT * FROM students
+WHERE age>22
+AND (course='aiml' OR course='web dev');
+
+
+2. IN (either) and NOT IN (neither)
+SELECT *
+FROM students
+WHERE course = 'AIML'
+   OR course = 'BCA'
+   OR course = 'MCA'
+   OR course = 'Web Dev';   -> better way to execute these type of query 
+
+
+SELECT *
+FROM students WHERE IN ('AIML','BCA','MCA' ,'Web Dev'  );
+
+3. BETWEEN 
+- it is used when we want value within range
+- it is inclusive 
+
+SELECT *
+FROM students
+WHERE age BETWEEN 20 AND 25;(20 and 25 included) and similar to WHERE age >= 20 AND age <= 25;
+
+
+4. NOT BETWEEN
+
+SELECT *
+FROM students
+WHERE age NOT BETWEEN 20 AND 25;(20 and 25 included) and similar to WHERE age >= 20 AND age <= 25;
+
+5. LIKE and % (this is case sensitive)
+- ILIKE (similar but incase sensitive) n and N both are same
+- if don't know the exact value 
+
+SELECT *
+FROM students
+WHERE name LIKE 'N%'; (print those name who start with n)
+
+
+WHERE name LIKE '%a'; (print those name who end with a)
+WHERE name LIKE '%a%';
+'N%'      → starts with N
+'%a'      → ends with a
+'%ova%'   → contains "ova"
+'_ova'     → exactly 4 characters, ending in "ova"
