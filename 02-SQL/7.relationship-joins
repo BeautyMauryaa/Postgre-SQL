@@ -1,0 +1,85 @@
+1. Primary Key
+2. Foreign Key
+3. Relationships
+4. One-to-One
+5. One-to-Many
+6. Many-to-Many
+7. INNER JOIN
+8. LEFT JOIN
+9. RIGHT JOIN
+10. FULL JOIN
+11. SELF JOIN
+
+
+
+1. Primary key:
+- column which uniquely identify each row
+ex: id
+INSERT INTO stud
+(id,name,email)
+VALUES(null,'testing','testing@gmail.com') give error
+
+INSERT INTO stud
+(id,name,email)
+VALUES(11,'testing','testing@gmail.com')
+
+
+2. Foreign KEY:
+-  value in one table that points to a record in another table.
+ALTER TABLE stud
+ADD CONSTRAINT fk_stud_course
+FOREIGN KEY (id)
+REFERENCES course(id);
+
+
+UPDATE stud
+SET course_id = 1
+WHERE id = 1;
+
+
+
+
+# Relationship btw table:
+- one to one (1:1)
+- one to many (1:N)
+- many to many (N:N)
+
+
+#JOINS: connecting tables
+
+Primary Key
+    ↓
+uniquely identifies a row
+
+Foreign Key
+    ↓
+points to another table's row
+
+JOIN
+    ↓
+uses that relationship to bring data together
+
+
+NNER JOIN returns only the rows where there is a matching value between the two tables according to the ON condition.
+SELECT
+    stud.name,
+    course.course
+FROM stud
+INNER JOIN course
+ON stud.course_id = course.id;
+
+
+2. LEFT JOIN: LEFT JOIN keeps every row from the LEFT table, even when there is no match in the right table.
+
+SELECT
+    stud.name,
+    course.course
+FROM stud
+LEFT JOIN course
+ON stud.course_id = course.id;
+
+
+3.RIGHT JOIN: RIGHT JOIN keeps every row from the RIGHT table, even when there is no match in the LEFT table.
+
+4. FULL join : GIVE EVERYTHING FROM BOTH TABLE
+5. self join: A table joins with itself.

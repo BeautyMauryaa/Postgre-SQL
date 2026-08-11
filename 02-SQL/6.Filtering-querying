@@ -1,0 +1,94 @@
+COUNT() : SELECT COUNT(*)
+FROM students WHERE age>22;
+- how many
+
+SUM(): Add VALUE
+SELECT SUM(fees)
+FROM students
+
+SELECT SUM(fees) AS total_fees
+FROM students
+
+
+
+AVG():
+SELECT AVG(fees) AS avg_fees
+FROM students
+
+
+MIN():
+SELECT MIN(fees) AS min_fees
+FROM students
+
+
+MAX()
+SELECT MAX(fees) AS max_fees
+FROM students
+
+
+
+SELECT
+    COUNT(*) AS total_students,
+    AVG(age) AS average_age,
+    MIN(age) AS youngest_age,
+    MAX(age) AS oldest_age
+FROM students;
+
+
+SELECT
+    COUNT(*) AS total_students
+FROM students
+WHERE is_active=true
+
+
+
+
+6. GROUP BY
+WHERE
+↓
+filters individual rows
+
+GROUP BY
+↓
+puts similar rows into groups
+
+COUNT / AVG / SUM / MIN / MAX
+↓
+calculates something for each group
+
+SELECT course, AVG(age) AS avg_age
+FROM students
+GROUP BY course;
+
+
+SELECT course, COUNT(*) AS active_student
+FROM students
+WHERE is_active=true
+GROUP BY course
+
+
+
+7. HAVING:
+notes:
+
+WHERE -> filters rows
+
+GROUP BY -> creates groups
+
+HAVING -> filters those groups
+
+
+- mental moda
+FROM
+ ↓
+WHERE          → filter rows
+ ↓
+GROUP BY       → create groups
+ ↓
+HAVING         → filter groups
+ ↓
+SELECT         → choose what to return
+ ↓
+ORDER BY       → sort
+ ↓
+LIMIT          → restrict result
