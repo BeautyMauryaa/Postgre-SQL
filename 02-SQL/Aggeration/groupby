@@ -1,0 +1,16 @@
+- without group by  we get the answer for entire table
+SELECT sum(amount) FROM orders 
+
+
+
+- with groupby we get answer per each column
+SELECT customer, sum(amount) FROM orders GROUP BY customer;
+
+
+rule: 
+- every column in select must be included in group by or be inside aggeration fucntion
+ex: SELECT customer,status, SUM(amount) FROM order GROUP BY customer(this is wrong)
+correct way: SELECT customer,status,SUM(amount) FROM order GROUP BY customer,status
+
+![wrong way](image-1.png)
+![correct way](image.png)

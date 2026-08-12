@@ -1,0 +1,105 @@
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    customer_id INT,
+    product VARCHAR(50),
+    category VARCHAR(50),
+    amount NUMERIC(10,2),
+    status VARCHAR(20),
+    order_date DATE
+);
+
+
+
+INSERT INTO orders
+(customer_id, product, category, amount, status, order_date)
+VALUES
+(1, 'Laptop', 'Electronics', 70000, 'completed', '2026-01-10'),
+(1, 'Mouse', 'Electronics', 1200, 'completed', '2026-01-12'),
+(1, 'Keyboard', 'Electronics', 2500, 'cancelled', '2026-01-15'),
+
+(2, 'Phone', 'Electronics', 45000, 'completed', '2026-01-11'),
+(2, 'Headphones', 'Electronics', 5000, 'completed', '2026-01-20'),
+
+(3, 'Chair', 'Furniture', 8000, 'completed', '2026-02-02'),
+(3, 'Desk', 'Furniture', 12000, 'completed', '2026-02-05'),
+(3, 'Lamp', 'Furniture', 2000, 'cancelled', '2026-02-07'),
+
+(4, 'Book', 'Education', 800, 'completed', '2026-02-10'),
+(4, 'Course', 'Education', 5000, 'completed', '2026-02-12'),
+
+(5, 'Monitor', 'Electronics', 18000, 'completed', '2026-03-01'),
+(5, 'Webcam', 'Electronics', 4000, 'completed', '2026-03-03'),
+(5, 'Mouse', 'Electronics', 1200, 'completed', '2026-03-05');
+
+
+
+1. How many orders are there? 
+- SELECT COUNT(*) FROM practorders; 
+
+2.What is the total order amount?
+- SELECT SUM(amount) FROM practorders;
+
+3. What is the average order amount?
+- SELECT AVG(amount) FROM practorders;
+
+4. What is the heighest order amount?
+- SELECT MAX(amount) FROM practorders;
+
+5. What is the lowest order amount?
+- SELECT MIN(amount) FROM practorders;
+
+# GROUP BY:
+
+6.Find the total amount spent by each customer?
+- SELECT customer_id, SUM(amount) FROM practorders GROUP BY customer_id,amount;
+
+7. Find the number of orders placed by each customer.
+- SELECT customer_id, COUNT(*) FROM practorders GROUP BY customer_id;
+
+8. Find the average order amount for each customer.
+-  SELECT customer_id, AVG(amount) FROM practorders GROUP BY customer_id;
+
+9.Find the total revenue for each category.( it will be only completed order)
+- SELECT customer_id, SUM(amount) FROM practorders AS total_revenue WHERE status='completed' GROUP BY customer_id,amount;
+
+
+# WHERE + aggregation
+
+Find the total completed-order amount for each customer.
+- SELECT customer_id, SUM(amount) FROM practorders AS total_revenue WHERE status='completed' GROUP BY customer_id,amount;
+
+12. Find the number of completed orders for each customer.
+- SELECT customer_id, COUNT(status) 
+FROM practorders 
+AS completed_order
+WHERE status='completed'
+GROUP BY customer_id,status
+
+
+13. Find customers whose total completed spending is greater than ₹20,000.
+- SELECT customer_id, SUM(amount) 
+FROM practorders 
+AS  total_completed 
+WHERE status='completed' AND amount>20000
+GROUP BY customer_id,amount
+
+
+14 .Find categories whose total revenue is greater than ₹20,000.
+- SELECT customer_id, SUM(amount) 
+FROM practorders 
+AS  total_revenue
+WHERE status='completed' 
+GROUP BY customer_id,amount
+HAVING SUM(amount)>20000
+
+
+15. Find customers who have placed at least 2 completed orders. 
+- SELECT customer_id, COUNT(order_id) 
+FROM practorders
+AS total_completed_id
+WHERE status='completed' 
+GROUP BY customer_id 
+HAVING COUNT(order_id)>=2
+
+
+16. 

@@ -1,0 +1,37 @@
+COUNT, SUM, AVG, MIN, MAX 
+COUNT() : SELECT COUNT(*)
+FROM students WHERE age>22;
+- how many
+
+SUM(): Add VALUE
+SELECT SUM(fees)
+FROM students
+
+SELECT SUM(fees) AS total_fees
+FROM students
+
+
+
+AVG():
+SELECT AVG(fees) AS avg_fees
+FROM students
+
+
+MIN():
+SELECT MIN(fees) AS min_fees
+FROM students
+
+
+MAX()
+SELECT MAX(fees) AS max_fees
+FROM students
+
+
+
+SELECT
+    COUNT(*) AS total_students,
+    AVG(age) AS average_age,
+    MIN(age) AS youngest_age,
+    MAX(age) AS oldest_age
+FROM students
+WHERE is_active=true;
