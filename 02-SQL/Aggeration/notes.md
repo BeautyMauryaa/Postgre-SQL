@@ -3,7 +3,7 @@ GROUP BY  - done
 WHERE - HAVING  - done
 Multiple-column grouping -done
 COUNT(*) vs COUNT(column) - done
-Conditional aggregation with FILTER / CASE
+Conditional aggregation with FILTER / CASE - 
 Aggregation with JOIN ← very important
 DISTINCT inside aggregation
 Aggregating dates/time
