@@ -1,0 +1,38 @@
+
+- it is primary key that made up from two or more column but both column must be unique
+
+PRIMARY KEY (student_id, course_id)
+
+- EX: many to many Students ↔ Courses
+
+CREATE TABLE enrollement(
+    student_id INT,
+    course_id INT
+
+    PRIMARY KEY(student_id,course_id)
+)
+
+INSERT INTO enrollements(student_id,course_id) VALUES (1,102) 
+- from both of them one must be unique
+
+
+
+- CREATE TABLE enrollement(
+    student_id INT,
+    course_id INT,
+
+    PRIMARY KEY(student_id,course_id) --- composite key
+
+    FOREIGN KEY(student_id)(
+        REFERENCE(student(id))
+    )
+
+    FOREIGN KEY(course_id)(
+        REFERENCE(course(id))
+    )
+)
+
+
+FOREIGN KEY
+--- student_id -> students.id 
+--- course_id -> courses.id 

@@ -1,0 +1,18 @@
+CREATE TABLE info(
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    age INT CHECK (age >= 18 AND age<=99),
+    phone VARCHAR(15) DEFAULT 'N/A'
+)
+
+NOT NULL   → value must exist (value cannot be NULL)
+UNIQUE     → duplicate values not allowed
+PRIMARY KEY → uniquely identifies row -> UNIQUE + NOT NULL
+
+FOREIGN KEY → maintains relationship -> references primary key of another table
+CHECK      → value must satisfy a condition
+DEFAULT    → automatically provides a value
+
+
+composite primary key -> mix of primary keys for ex mix of stud-Id and course_id but both must be unique 
