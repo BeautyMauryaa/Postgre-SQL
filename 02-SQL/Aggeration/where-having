@@ -1,0 +1,20 @@
+# WHERE:
+- it works before grouping
+- filter individual row
+
+SELECT customer, SUM(amount) 
+FROM orders 
+WHERE status='completed'
+GROUP BY customer;  
+- first remove cancelled order and then group by customer
+
+
+# having: keep only (filter group)
+SELECT customer, SUM(amount)
+FROM orders
+WHERE status='completed'
+GROUP BY customer
+HAVING BY SUM(amount)>1000
+
+
+
