@@ -1,6 +1,6 @@
 # PostgreSQL Practice
 
-A practice repository for learning and working with PostgreSQL.
+A hands-on PostgreSQL practice repository as part of my **PERN Stack** learning.
 
 ## Topics Covered
 
@@ -8,7 +8,6 @@ A practice repository for learning and working with PostgreSQL.
 * CRUD operations
 * Constraints
 * Filtering & sorting
-* SQL operators
 * Joins
 * Aggregation
 * `GROUP BY` & `HAVING`
@@ -20,7 +19,7 @@ A practice repository for learning and working with PostgreSQL.
 
 ## Practice
 
-The repository contains SQL queries, exercises, and examples that I use while learning PostgreSQL.
+Contains SQL queries, exercises, and examples practiced while learning PostgreSQL and working toward building applications with the **PERN Stack**.
 
 ## Tools
 
